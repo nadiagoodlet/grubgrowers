@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  HomeViewController.swift
 //  Grub Growers
 //
 //  Created by Nadia Goodlet on 16/02/2020.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+   
 }
 

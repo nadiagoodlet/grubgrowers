@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  DirectoryViewController.swift
 //  Grub Growers
 //
 //  Created by Nadia Goodlet on 16/02/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class DirectoryViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
