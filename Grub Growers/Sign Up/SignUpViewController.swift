@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
@@ -25,25 +28,7 @@ class SignUpViewController: UIViewController {
         
     }
     
-    
-    static func styleTextField(_ textfield:UITextField) {
-            
-            // Create the bottom line
-            let bottomLine = CALayer()
-            
-            bottomLine.frame = CGRect(x: 0, y: textfield.frame.height + 5, width: textfield.frame.width, height: 2)
-            
-            bottomLine.backgroundColor = UIColor.init(red: 232/255, green: 232/255, blue: 232/255, alpha: 1).cgColor
-            
-            // Remove border on text field
-            textfield.borderStyle = .none
-            
-            // Add the line to the text field
-            textfield.layer.addSublayer(bottomLine)
-        
-            
-            
-        }
+
     
     
     func setUpElements() {
@@ -51,11 +36,7 @@ class SignUpViewController: UIViewController {
         //Hide the error label 
         errorLabel.alpha = 0
         
-        // Styling of text fields
-        SignUpViewController.styleTextField(firstNameTextField)
-        SignUpViewController.styleTextField(lastNameTextField)
-        SignUpViewController.styleTextField(emailTextField)
-        SignUpViewController.styleTextField(passwordTextField)
+   
         
         // Rounded corners on Sign Up button
         let path = UIBezierPath(roundedRect: self.signUpButton.bounds, byRoundingCorners:[.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
@@ -66,20 +47,122 @@ class SignUpViewController: UIViewController {
        
     }
 
-  
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    static func isPasswordValid(_ password : String) -> Bool {
+        
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+        return passwordTest.evaluate(with: password)
     }
-    */
+    
+   static func isValidEmail(_ email : String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
+    // Check the fields and validate the data If correct return nil, else display error message
+    func validateFields() -> String? {
+        
+        // Check all fields are filled
+        
+        if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            
+            return "Whoops! You missed something."
+        }
+        
+        // Check password is secure
+        
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if SignUpViewController.isPasswordValid(cleanedPassword) == false {
+            // Password isn't secure enough
+            
+            return "Passwords must contain at least 8 characters, a special character and a number."
+        }
+        
+        // Check email is secure
+        
+        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        if SignUpViewController.isValidEmail(cleanedEmail) == false {
+            
+            return "Whoops! That email address is invalid."
+        }
+        
+        return nil
+    }
     
     @IBAction func signUpTapped(_ sender: Any) {
+        
+        // Validate the fields
+        let error = validateFields()
+        
+        if error != nil {
+            
+            // Issue with fields, Show error message
+            showError(error!)
+        }
+        else {
+            
+            //Clean the data
+            let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            
+            // Create the user
+            
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
+               
+                // Check for errors
+                if err != nil {
+                    
+                    // Error occurred creating the user
+                    self.showError("Sorry, an error has occurred whilst creating this account.")
+                }
+                else {
+                    
+                    // User successfully created, store first and last name
+                  
+                    let db = Firestore.firestore()
+                    
+                    db.collection("users").addDocument(data: ["firstname":firstName, "lastname":lastName, "uid": result!.user.uid ]) { (error) in
+                        
+                        if error != nil {
+                            // Show error message, account was created but first and last name weren't saved
+                            self.showError("Sorry, there was a server side error.")
+                            
+                        }
+                    }
+                    
+                    // Transition to the Home screen
+                    self.transitionToHome()
+                    
+                }
+            }
+            
+        }
+        
     }
     
+    func showError(_ message:String) {
+        
+        errorLabel.text = message
+        errorLabel.alpha = 1
+        
+    }
+    
+    func transitionToHome() {
+        
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+        
+        
+        
+        
+    }
     
 }

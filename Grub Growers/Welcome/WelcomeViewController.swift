@@ -21,6 +21,8 @@ class WelcomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
+        loginStyle()
+        signUpstyle()
         setUpElements()
     }
     
@@ -40,19 +42,29 @@ class WelcomeViewController: UIViewController {
     func setUpElements() {
         
         
+       
+    }
+    
+    func loginStyle() {
+        
         // Rounded corners on login button
-        let path = UIBezierPath(roundedRect: self.loginButton.bounds, byRoundingCorners:[.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
-           let maskLayer = CAShapeLayer()
-           maskLayer.frame = self.loginButton.bounds
-           maskLayer.path = path.cgPath
-           self.loginButton.layer.mask = maskLayer
+               let path = UIBezierPath(roundedRect: self.loginButton.bounds, byRoundingCorners:[.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
+                  let maskLayer = CAShapeLayer()
+                  maskLayer.frame = self.loginButton.bounds
+                  maskLayer.path = path.cgPath
+                  self.loginButton.layer.mask = maskLayer
+        
+    }
+    
+    func signUpstyle() {
         
         // Rounded corners on sign up button
-        _ = UIBezierPath(roundedRect: self.signUpButton.bounds, byRoundingCorners:[.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
-            _ = CAShapeLayer()
-            maskLayer.frame = self.signUpButton.bounds
-            maskLayer.path = path.cgPath
-            self.signUpButton.layer.mask = maskLayer
+               let path = UIBezierPath(roundedRect: self.signUpButton.bounds, byRoundingCorners:[.topLeft, .bottomLeft], cornerRadii: CGSize(width: 10, height: 10))
+                   let maskLayer = CAShapeLayer()
+                   maskLayer.frame = self.signUpButton.bounds
+                   maskLayer.path = path.cgPath
+                   self.signUpButton.layer.mask = maskLayer
+               
         
     }
 

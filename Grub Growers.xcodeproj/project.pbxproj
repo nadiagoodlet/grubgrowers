@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0126FB9824188A0D00590C80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0126FB9724188A0D00590C80 /* GoogleService-Info.plist */; };
+		0126FB9A24189E4500590C80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126FB9924189E4500590C80 /* Constants.swift */; };
 		01278C5224171479009BFBF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C5124171479009BFBF3 /* SignUpViewController.swift */; };
 		01278C5524171492009BFBF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C5424171492009BFBF3 /* LoginViewController.swift */; };
 		01278C58241715A2009BFBF3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C57241715A2009BFBF3 /* WelcomeViewController.swift */; };
@@ -21,9 +23,12 @@
 		01D39E262406109000DC8C00 /* WalkthroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D39E252406109000DC8C00 /* WalkthroughContentViewController.swift */; };
 		01D39E282406131200DC8C00 /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D39E272406131200DC8C00 /* WalkthroughPageViewController.swift */; };
 		01D39E2A2406193600DC8C00 /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D39E292406193600DC8C00 /* WalkthroughViewController.swift */; };
+		A99341AA471AFF3C0368AA25 /* Pods_Grub_Growers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5A93B195A3552FCB050D0A5 /* Pods_Grub_Growers.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0126FB9724188A0D00590C80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0126FB9924189E4500590C80 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01278C5124171479009BFBF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		01278C5424171492009BFBF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01278C57241715A2009BFBF3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +45,9 @@
 		01D39E252406109000DC8C00 /* WalkthroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughContentViewController.swift; sourceTree = "<group>"; };
 		01D39E272406131200DC8C00 /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		01D39E292406193600DC8C00 /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		27B95BF7DA0C020B15E9DE29 /* Pods-Grub Growers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grub Growers.release.xcconfig"; path = "Target Support Files/Pods-Grub Growers/Pods-Grub Growers.release.xcconfig"; sourceTree = "<group>"; };
+		3DD81AB1FACDDF0F3A4FFA59 /* Pods-Grub Growers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grub Growers.debug.xcconfig"; path = "Target Support Files/Pods-Grub Growers/Pods-Grub Growers.debug.xcconfig"; sourceTree = "<group>"; };
+		E5A93B195A3552FCB050D0A5 /* Pods_Grub_Growers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grub_Growers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A99341AA471AFF3C0368AA25 /* Pods_Grub_Growers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,8 @@
 			children = (
 				0183CE832405EB1C00F96CB6 /* Grub Growers */,
 				0152DA7D23F9D4F300EBA6E6 /* Products */,
+				CB55664391A1C44F7CBDBD18 /* Pods */,
+				3A63F242A2281F45F7D9DD35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +144,7 @@
 		0183CE8B2405EB1C00F96CB6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0126FB9924189E4500590C80 /* Constants.swift */,
 				0183CE8C2405EB1C00F96CB6 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -163,6 +175,7 @@
 		0183CE912405EB1C00F96CB6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0126FB9724188A0D00590C80 /* GoogleService-Info.plist */,
 				0183CE922405EB1C00F96CB6 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -187,6 +200,23 @@
 			path = Walkthrough;
 			sourceTree = "<group>";
 		};
+		3A63F242A2281F45F7D9DD35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5A93B195A3552FCB050D0A5 /* Pods_Grub_Growers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB55664391A1C44F7CBDBD18 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3DD81AB1FACDDF0F3A4FFA59 /* Pods-Grub Growers.debug.xcconfig */,
+				27B95BF7DA0C020B15E9DE29 /* Pods-Grub Growers.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0152DA9223F9D4F600EBA6E6 /* Build configuration list for PBXNativeTarget "Grub Growers" */;
 			buildPhases = (
+				52379C4099D8F8B2EA35DAA7 /* [CP] Check Pods Manifest.lock */,
 				0152DA7823F9D4F300EBA6E6 /* Sources */,
 				0152DA7923F9D4F300EBA6E6 /* Frameworks */,
 				0152DA7A23F9D4F300EBA6E6 /* Resources */,
+				E7B7CC1F118D3D72473DF3C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -247,6 +279,7 @@
 			files = (
 				0183CE972405EB1C00F96CB6 /* Main.storyboard in Resources */,
 				0183CE962405EB1C00F96CB6 /* LaunchScreen.storyboard in Resources */,
+				0126FB9824188A0D00590C80 /* GoogleService-Info.plist in Resources */,
 				0183CE992405EB1C00F96CB6 /* Assets.xcassets in Resources */,
 				01D39E23240602A800DC8C00 /* Onboarding.storyboard in Resources */,
 			);
@@ -254,12 +287,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52379C4099D8F8B2EA35DAA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Grub Growers-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7B7CC1F118D3D72473DF3C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grub Growers/Pods-Grub Growers-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Grub Growers/Pods-Grub Growers-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Grub Growers/Pods-Grub Growers-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0152DA7823F9D4F300EBA6E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				01278C5524171492009BFBF3 /* LoginViewController.swift in Sources */,
+				0126FB9A24189E4500590C80 /* Constants.swift in Sources */,
 				01278C58241715A2009BFBF3 /* WelcomeViewController.swift in Sources */,
 				01D39E282406131200DC8C00 /* WalkthroughPageViewController.swift in Sources */,
 				01D39E2A2406193600DC8C00 /* WalkthroughViewController.swift in Sources */,
@@ -410,6 +486,7 @@
 		};
 		0152DA9323F9D4F600EBA6E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD81AB1FACDDF0F3A4FFA59 /* Pods-Grub Growers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -429,6 +506,7 @@
 		};
 		0152DA9423F9D4F600EBA6E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27B95BF7DA0C020B15E9DE29 /* Pods-Grub Growers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

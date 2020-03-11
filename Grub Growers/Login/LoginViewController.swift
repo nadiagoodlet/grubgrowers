@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
@@ -24,30 +25,12 @@ class LoginViewController: UIViewController {
         setUpElements()
     }
     
-    static func styleTextField(_ textfield:UITextField) {
-               
-               // Create the bottom line
-               let bottomLine = CALayer()
-               
-               bottomLine.frame = CGRect(x: 0, y: textfield.frame.height + 5, width: textfield.frame.width, height: 2)
-               
-               bottomLine.backgroundColor = UIColor.init(red: 232/255, green: 232/255, blue: 232/255, alpha: 1).cgColor
-               
-               // Remove border on text field
-               textfield.borderStyle = .none
-               
-               // Add the line to the text field
-               textfield.layer.addSublayer(bottomLine)
-               
-           }
+
 
     func setUpElements() {
         
         //Hide the error label
         errorLabel.alpha = 0
-        
-        LoginViewController.styleTextField(emailTextField)
-        LoginViewController.styleTextField(passwordTextField)
         
         
         // Rounded corners on Sign Up button
@@ -57,19 +40,96 @@ class LoginViewController: UIViewController {
            maskLayer.path = path.cgPath
            self.loginButton.layer.mask = maskLayer
     }
-    /*
-    // MARK: - Navigation
+    
+    static func isPasswordValid(_ password : String) -> Bool {
+          
+          let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}")
+          return passwordTest.evaluate(with: password)
+      }
+      
+     static func isValidEmail(_ email : String) -> Bool {
+          let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+          let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+          return emailPred.evaluate(with: email)
+      }
+  
+    // Check the fields and validate the data If correct return nil, else display error message
+      func validateFields() -> String? {
+          
+          // Check all fields are filled
+          
+          if emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
+              
+              return "Whoops! You missed something."
+          }
+          
+          // Check password is secure
+          
+          let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+          
+          if SignUpViewController.isPasswordValid(cleanedPassword) == false {
+              // Password isn't secure enough
+              
+              return "Whoops! That password is incorrect."
+          }
+          
+          // Check email is secure
+          
+          let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+          
+          if SignUpViewController.isValidEmail(cleanedEmail) == false {
+              
+              return "Whoops! That email address is invalid."
+          }
+          
+          return nil
+      }
     
     
     @IBAction func loginTapped(_ sender: Any) {
+        
+        // Validate text fields
+       
+              let error = validateFields()
+              
+              if error != nil {
+                  
+                  // Issue with fields, Show error message
+                  showError(error!)
+              }
+              else {
+        
+                // Clean data
+                let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+                let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Sign in the user
+                Auth.auth().signIn(withEmail: email, password: password) { (result, err) in
+                    
+                    if err != nil {
+                        // Unsuccessful sign in
+                        self.errorLabel.text = err!.localizedDescription
+                        self.errorLabel.alpha = 1
+                    }
+                    else {
+                        
+                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                              
+                        self.view.window?.rootViewController = homeViewController
+                        self.view.window?.makeKeyAndVisible()
+                              
+                        
+                    }
+                }
     }
+}
+        
+        func showError(_ message:String) {
+               
+               errorLabel.text = message
+               errorLabel.alpha = 1
+               
+           }
     
 }
