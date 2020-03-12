@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		0126FB9824188A0D00590C80 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0126FB9724188A0D00590C80 /* GoogleService-Info.plist */; };
 		0126FB9A24189E4500590C80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126FB9924189E4500590C80 /* Constants.swift */; };
+		0126FB9D2419592D00590C80 /* FarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0126FB9C2419592D00590C80 /* FarmViewController.swift */; };
+		0126FB9F24199F5000590C80 /* FarmTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0126FB9E24199F5000590C80 /* FarmTab.storyboard */; };
+		0126FBA224199F8F00590C80 /* DirectoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0126FBA124199F8F00590C80 /* DirectoryTab.storyboard */; };
+		0126FBA424199FA700590C80 /* TaskTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0126FBA324199FA700590C80 /* TaskTab.storyboard */; };
+		0126FBA624199FC400590C80 /* PlanTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0126FBA524199FC400590C80 /* PlanTab.storyboard */; };
 		01278C5224171479009BFBF3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C5124171479009BFBF3 /* SignUpViewController.swift */; };
 		01278C5524171492009BFBF3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C5424171492009BFBF3 /* LoginViewController.swift */; };
 		01278C58241715A2009BFBF3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01278C57241715A2009BFBF3 /* WelcomeViewController.swift */; };
 		0183CE962405EB1C00F96CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0183CE852405EB1C00F96CB6 /* LaunchScreen.storyboard */; };
 		0183CE972405EB1C00F96CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0183CE872405EB1C00F96CB6 /* Main.storyboard */; };
-		0183CE982405EB1C00F96CB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183CE8A2405EB1C00F96CB6 /* HomeViewController.swift */; };
 		0183CE992405EB1C00F96CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0183CE8C2405EB1C00F96CB6 /* Assets.xcassets */; };
 		0183CE9A2405EB1C00F96CB6 /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183CE8F2405EB1C00F96CB6 /* DirectoryViewController.swift */; };
 		0183CE9C2405EB1C00F96CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0183CE942405EB1C00F96CB6 /* AppDelegate.swift */; };
@@ -29,13 +33,17 @@
 /* Begin PBXFileReference section */
 		0126FB9724188A0D00590C80 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0126FB9924189E4500590C80 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0126FB9C2419592D00590C80 /* FarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarmViewController.swift; sourceTree = "<group>"; };
+		0126FB9E24199F5000590C80 /* FarmTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FarmTab.storyboard; sourceTree = "<group>"; };
+		0126FBA124199F8F00590C80 /* DirectoryTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DirectoryTab.storyboard; sourceTree = "<group>"; };
+		0126FBA324199FA700590C80 /* TaskTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskTab.storyboard; sourceTree = "<group>"; };
+		0126FBA524199FC400590C80 /* PlanTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlanTab.storyboard; sourceTree = "<group>"; };
 		01278C5124171479009BFBF3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		01278C5424171492009BFBF3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		01278C57241715A2009BFBF3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		0152DA7C23F9D4F300EBA6E6 /* Grub Growers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grub Growers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0183CE862405EB1C00F96CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0183CE882405EB1C00F96CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0183CE8A2405EB1C00F96CB6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0183CE8C2405EB1C00F96CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0183CE8F2405EB1C00F96CB6 /* DirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
 		0183CE922405EB1C00F96CB6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0126FB9B241958E800590C80 /* Farm */ = {
+			isa = PBXGroup;
+			children = (
+				0126FB9C2419592D00590C80 /* FarmViewController.swift */,
+			);
+			path = Farm;
+			sourceTree = "<group>";
+		};
 		01278C502417140F009BFBF3 /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,18 +123,18 @@
 		0183CE832405EB1C00F96CB6 /* Grub Growers */ = {
 			isa = PBXGroup;
 			children = (
-				01278C56241714A2009BFBF3 /* Welcome */,
-				01278C5324171480009BFBF3 /* Login */,
-				01278C502417140F009BFBF3 /* Sign Up */,
-				01D39E242406103400DC8C00 /* Walkthrough */,
-				0183CE842405EB1C00F96CB6 /* Storyboards */,
-				0183CE892405EB1C00F96CB6 /* Home */,
-				0183CE8B2405EB1C00F96CB6 /* Resources */,
-				0183CE8D2405EB1C00F96CB6 /* Models */,
-				0183CE8E2405EB1C00F96CB6 /* Directory */,
-				0183CE902405EB1C00F96CB6 /* Network Manager */,
-				0183CE912405EB1C00F96CB6 /* Supporting Files */,
 				0183CE932405EB1C00F96CB6 /* Startup */,
+				0183CE842405EB1C00F96CB6 /* Storyboards */,
+				0183CE8B2405EB1C00F96CB6 /* Resources */,
+				0183CE912405EB1C00F96CB6 /* Supporting Files */,
+				01D39E242406103400DC8C00 /* Walkthrough */,
+				01278C56241714A2009BFBF3 /* Welcome */,
+				01278C502417140F009BFBF3 /* Sign Up */,
+				01278C5324171480009BFBF3 /* Login */,
+				0126FB9B241958E800590C80 /* Farm */,
+				0183CE8E2405EB1C00F96CB6 /* Directory */,
+				0183CE8D2405EB1C00F96CB6 /* Models */,
+				0183CE902405EB1C00F96CB6 /* Network Manager */,
 			);
 			path = "Grub Growers";
 			sourceTree = "<group>";
@@ -127,18 +143,14 @@
 			isa = PBXGroup;
 			children = (
 				0183CE852405EB1C00F96CB6 /* LaunchScreen.storyboard */,
-				0183CE872405EB1C00F96CB6 /* Main.storyboard */,
 				01D39E22240602A800DC8C00 /* Onboarding.storyboard */,
+				0183CE872405EB1C00F96CB6 /* Main.storyboard */,
+				0126FB9E24199F5000590C80 /* FarmTab.storyboard */,
+				0126FBA124199F8F00590C80 /* DirectoryTab.storyboard */,
+				0126FBA324199FA700590C80 /* TaskTab.storyboard */,
+				0126FBA524199FC400590C80 /* PlanTab.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		0183CE892405EB1C00F96CB6 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				0183CE8A2405EB1C00F96CB6 /* HomeViewController.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		0183CE8B2405EB1C00F96CB6 /* Resources */ = {
@@ -280,7 +292,11 @@
 				0183CE972405EB1C00F96CB6 /* Main.storyboard in Resources */,
 				0183CE962405EB1C00F96CB6 /* LaunchScreen.storyboard in Resources */,
 				0126FB9824188A0D00590C80 /* GoogleService-Info.plist in Resources */,
+				0126FBA424199FA700590C80 /* TaskTab.storyboard in Resources */,
+				0126FBA624199FC400590C80 /* PlanTab.storyboard in Resources */,
 				0183CE992405EB1C00F96CB6 /* Assets.xcassets in Resources */,
+				0126FB9F24199F5000590C80 /* FarmTab.storyboard in Resources */,
+				0126FBA224199F8F00590C80 /* DirectoryTab.storyboard in Resources */,
 				01D39E23240602A800DC8C00 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,8 +356,8 @@
 				01D39E282406131200DC8C00 /* WalkthroughPageViewController.swift in Sources */,
 				01D39E2A2406193600DC8C00 /* WalkthroughViewController.swift in Sources */,
 				01278C5224171479009BFBF3 /* SignUpViewController.swift in Sources */,
-				0183CE982405EB1C00F96CB6 /* HomeViewController.swift in Sources */,
 				0183CE9A2405EB1C00F96CB6 /* DirectoryViewController.swift in Sources */,
+				0126FB9D2419592D00590C80 /* FarmViewController.swift in Sources */,
 				0183CE9C2405EB1C00F96CB6 /* AppDelegate.swift in Sources */,
 				01D39E262406109000DC8C00 /* WalkthroughContentViewController.swift in Sources */,
 				0183CE9D2405EB1C00F96CB6 /* SceneDelegate.swift in Sources */,

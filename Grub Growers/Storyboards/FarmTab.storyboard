@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eMm-eH-cQD">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Farm View Controller-->
+        <scene sceneID="Ybe-9W-pDT">
+            <objects>
+                <viewController storyboardIdentifier="FarmVC" id="eMm-eH-cQD" customClass="FarmViewController" customModule="Grub_Growers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hOH-JD-Kzl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6b-vg-Fld">
+                                <rect key="frame" x="318" y="59" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOut_TouchUpInside:" destination="eMm-eH-cQD" eventType="touchUpInside" id="FUB-cb-s5G"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Farm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHB-7P-Qtz">
+                                <rect key="frame" x="41" y="97" width="160" height="54"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Bold" family="Bodoni 72" pointSize="45"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bHB-7P-Qtz" firstAttribute="leading" secondItem="utN-RC-iOQ" secondAttribute="leading" constant="41" id="5ad-aR-hDA"/>
+                            <constraint firstItem="bHB-7P-Qtz" firstAttribute="top" secondItem="utN-RC-iOQ" secondAttribute="top" constant="53" id="Dme-t7-B5c"/>
+                            <constraint firstItem="G6b-vg-Fld" firstAttribute="top" secondItem="utN-RC-iOQ" secondAttribute="top" constant="15" id="Pfa-dS-6lv"/>
+                            <constraint firstItem="utN-RC-iOQ" firstAttribute="trailing" secondItem="bHB-7P-Qtz" secondAttribute="trailing" constant="213" id="g8l-BY-HE2"/>
+                            <constraint firstItem="G6b-vg-Fld" firstAttribute="leading" secondItem="utN-RC-iOQ" secondAttribute="leading" constant="318" id="l1X-tM-ALS"/>
+                            <constraint firstItem="utN-RC-iOQ" firstAttribute="trailing" secondItem="G6b-vg-Fld" secondAttribute="trailing" constant="35" id="t3w-rk-S0A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="utN-RC-iOQ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="d35-3A-1uV"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1S-zS-zHW" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="916" y="64"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="20" height="20"/>
+    </resources>
+</document>

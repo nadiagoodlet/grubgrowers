@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class WelcomeViewController: UIViewController {
     
@@ -23,11 +24,25 @@ class WelcomeViewController: UIViewController {
         
         loginStyle()
         signUpstyle()
-        setUpElements()
+     
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+             // Checking if the user is alrady logged in / not nil
+                  if Auth.auth().currentUser != nil {
+                      // If user is not nil, transiton straight to HomeVC
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    if let homeVC = storyboard.instantiateViewController(identifier: "HomeVC") as? UITabBarController {
+                        show(homeVC, sender: nil)
+//
+                    }
+                          
+//
+                  }
            
+        // Checking if the user has already seen the walktrhough screens
            if UserDefaults.standard.bool(forKey: "hasViewedWalkthrough"){
                return
            }
@@ -36,14 +51,12 @@ class WelcomeViewController: UIViewController {
            if let walkthroughViewController = storyboard.instantiateViewController(identifier: "WalkthroughViewController") as? WalkthroughViewController {
                present(walkthroughViewController, animated: true, completion: nil)
            }
+        
+       
+        
        }
     
     
-    func setUpElements() {
-        
-        
-       
-    }
     
     func loginStyle() {
         

@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class LoginViewController: UIViewController {
 
     
@@ -23,8 +24,12 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         setUpElements()
+        
+//        setupUI()
+        
     }
     
+  
 
 
     func setUpElements() {
@@ -114,7 +119,7 @@ class LoginViewController: UIViewController {
                     }
                     else {
                         
-                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+                        let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? UITabBarController
                               
                         self.view.window?.rootViewController = homeViewController
                         self.view.window?.makeKeyAndVisible()
